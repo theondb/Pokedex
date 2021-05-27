@@ -1,0 +1,272 @@
+$primary-color: #3D7DCA;
+$secondary-color: #FFCB05; 
+$third-color: #003A70;
+$white: #ffffff;
+$black: #000000;
+
+%grid-theme{
+    background-color: $primary-color;
+    color: $black;
+    padding: 20px;
+}
+
+%card{
+    padding: inherit;
+    text-align: center;
+    background-color: $white;
+    box-shadow: 0 4px 8px 0 #C0C0C0;
+    transition: 0.3s;
+}
+
+%pad-bottom{
+    padding-bottom: 20px;
+}
+
+%center-align{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+html{
+    box-sizing: border-box;
+    font-size: 100%;
+    
+    h1{
+        text-align: center;
+        font-size: 30px;
+        @extend %pad-bottom;
+    }
+
+    h2, p, ul, caption{
+        font-size: 20px;
+    }
+
+    h2{
+        @extend %pad-bottom;
+    }
+}
+
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+
+nav {
+    @media (min-width: 1024px) {
+        .top-navbar {
+          display: inline-flex !important;
+        }
+    }
+    img{
+        height: 15%;
+        width: 15%;
+        padding-right: 10px;
+    }
+}
+
+footer, .footer{
+    background-color: $third-color;
+    @extend %pad-bottom;
+}
+
+#nav-button:hover{
+    background-color: $secondary-color;
+    color: $black;
+}
+
+#nav-background{
+    background-color: $third-color;
+}
+
+.grid-parent{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    align-content: center;
+    @media (min-width: 56.25em){
+      grid-template-columns: 1fr 300px;
+    }
+}
+
+.pokeSprite{
+    display: block;
+    @extend %center-align;
+ 	margin-top: 10px;
+ 	max-width: 20%;
+}
+
+#pokemonDetails{
+    background-color: $white;
+    @extend %card;
+    img{
+        @extend %pad-bottom;
+    }
+}
+
+#gameDetails{
+    @extend %card;
+}
+
+table, th, td{
+    background-color:$white ;
+    text-transform: capitalize;
+    border-collapse: collapse;
+    table-layout: inherit;
+    border: 1px solid $black;
+    padding: 15px;
+    @extend %center-align;
+    text-align: center;
+
+    caption{
+        @extend %pad-bottom;
+    }
+}
+
+#moves-table  { 
+    overflow-y:scroll;
+    height:400px;
+    display:block;
+}
+
+.main-content{
+    @extend %grid-theme;
+    justify-content: center;
+    text-align: center;
+}
+
+.pokedex-parent{
+    @extend %grid-theme;
+    justify-content: center;
+    @extend %pad-bottom;
+}
+
+.card{
+    .pList{
+        flex-wrap: wrap;
+        display: flex;
+        gap: 20px;
+        justify-content: space-evenly;
+        @extend %grid-theme;
+        background-color: $white;
+
+        li{
+            @extend %card;
+
+            a{
+                img{
+                    @extend %center-align;
+                }
+            }
+        }
+        .listCard:hover{
+            box-shadow: 0 8px 16px 0 #D3D3D3;
+        }
+    }
+
+    .cList {
+        column-count: 3;
+        text-align: center;
+
+        li:nth-child(1) a{ 
+            background-color: #A8A878;
+        }
+        li:nth-child(2) a{ 
+            background-color: #C03028;
+        }
+        li:nth-child(3) a{ 
+            background-color: #A890F0;
+        }
+        li:nth-child(4) a{ 
+            background-color: #A040A0;
+        }
+        li:nth-child(5) a{ 
+            background-color: #E0C068;
+        }
+        li:nth-child(6) a{ 
+            background-color: #B8A038;
+        }
+        li:nth-child(7) a{ 
+            background-color: #A8B820;
+        }
+        li:nth-child(8) a{ 
+            background-color: #705898;
+        }
+        li:nth-child(9) a{ 
+            background-color: #B8B8D0;
+        }
+        li:nth-child(10) a{ 
+            background-color: #F08030;
+        }
+        li:nth-child(11) a{ 
+            background-color: #6890F0;
+        }
+        li:nth-child(12) a{ 
+            background-color: #78C850;
+        }
+        li:nth-child(13) a{ 
+            background-color: #F8D030;
+        }
+        li:nth-child(14) a{ 
+            background-color: #F85888;
+        }
+        li:nth-child(15) a{ 
+            background-color: #98D8D8;
+        }
+        li:nth-child(16) a{ 
+            background-color: #7038F8;
+        }
+        li:nth-child(17) a{ 
+            background-color: #705848;
+        }
+        li:nth-child(18) a{ 
+            background-color: #EE99AC;
+        }
+
+        li a {
+            text-decoration: none;
+            color: $white;
+            display: block;
+            padding: 20px;  
+        }
+        li a:hover{
+            text-decoration: none;
+            color: $white;
+            background-color: $third-color;
+        }
+        }
+    }
+
+.search{
+    text-align: center;
+    @extend %pad-bottom;
+    color: $black;
+
+    #search-box{
+        width: 200px;
+        -webkit-transition: width 0.4s ease-in-out;
+        transition: width 0.4s ease-in-out;
+        text-align: left;
+        border: 3px solid $third-color;
+        border-radius: 5px;
+        padding: 5px 10px;
+    }
+
+    #search-box:focus{
+        width: 60%
+    }
+
+    #search-btn{
+        background-color: $white; 
+        border: 3px solid $secondary-color;
+        border-radius: 5px;
+        color: $black;
+        padding: 5px 12px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    #search-btn:hover{
+        background-color: $secondary-color; 
+        color:$white;
+    }
+}
